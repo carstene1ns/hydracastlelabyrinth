@@ -181,7 +181,7 @@ Platform* platforms[MAX_PLATFORMS];
 extern char savename[4096];
 extern char savemap[4096];
 #else
-#define savename "data/save.tmp"
+#define savename "save.tmp"
 #define savemap "map/018.map"
 #endif
 

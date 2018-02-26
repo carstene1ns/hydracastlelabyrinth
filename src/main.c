@@ -29,8 +29,8 @@ void createSaveLocations()
 
 	#else
 		//psp, wii
-		mkdir("/data", 0777);
-		mkdir("/map", 0777);
+		//mkdir("/data", 0777);
+		//mkdir("/map", 0777);
 	#endif
 }
 

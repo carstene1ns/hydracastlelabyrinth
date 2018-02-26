@@ -1,0 +1,40 @@
+TARGET = HCL
+OBJS = src/collision.o src/effect.o src/enemy.o src/game.o src/hero.o \
+	src/ini.o src/inventory.o src/main.o src/object.o src/options.o \
+	src/PHL.o src/platform.o src/qda.o src/stagedata.o src/text.o \
+	src/titlescreen.o src/weapon.o src/enemies/batboss.o src/enemies/bat.o \
+	src/enemies/bee.o src/enemies/boar.o src/enemies/boomknight.o \
+	src/enemies/crab.o src/enemies/devil.o src/enemies/dodo.o \
+	src/enemies/dog.o src/enemies/firewheel.o src/enemies/fish.o \
+	src/enemies/garm.o src/enemies/gas.o src/enemies/ghoul.o \
+	src/enemies/golem.o src/enemies/gyra.o src/enemies/heads.o \
+	src/enemies/hydra.o src/enemies/jellyfish.o src/enemies/knight.o \
+	src/enemies/lolidra.o src/enemies/pendulum.o src/enemies/podoboo.o \
+	src/enemies/poisonknight.o src/enemies/pumpkin.o src/enemies/seal.o \
+	src/enemies/skeleton.o src/enemies/skull.o src/enemies/slime.o \
+	src/enemies/slug.o src/enemies/thwomp.o src/enemies/waterjumper.o \
+	src/enemies/wizard.o src/psp/audio.o src/psp/graphics.o src/psp/input.o \
+	src/psp/system.o
+
+BUILD_PRX=1
+PSP_FW_VERSION=371
+
+INCDIR =
+COMMON_FLAGS = -O2 -G0 -Wall
+CFLAGS = -std=gnu99 $(COMMON_FLAGS)
+CXXFLAGS = -std=c+11 $(COMMON_FLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBS = -losl -lpng -lz -ljpeg -lm \
+	-lpsphprm -lpspsdk -lpspctrl -lpspumd -lpsprtc -lpsppower -lpspgu -lpspgum \
+	-lpspaudiolib -lpsphttp -lpspssl -lpspwlan -lpspnet_adhocmatching \
+	-lpspnet_adhoc -lpspnet_adhocctl -lpspaudio -lpspgu -lpsppower -lpsphprm
+
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = Hydra Castle Labyrinth
+PSP_EBOOT_ICON = eboot_icon.png
+PSP_EBOOT_UNKPNG = eboot_pic0.png
+PSP_EBOOT_PIC1 = eboot_pic1.png
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak

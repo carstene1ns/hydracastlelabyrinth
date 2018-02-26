@@ -70,7 +70,7 @@ void loadText()
 	#elif defined(_SDL)
 	strcpy(fullPath, "data/");
 	#else
-		strcpy(fullPath, "romfs/");
+		strcpy(fullPath, "");
 	#endif
 	
 	if (gameLanguage == ENGLISH) {

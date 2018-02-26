@@ -929,7 +929,7 @@ void loadScreen()
 		#elif defined(_SDL)
 			strcat(dest, "data/map/");
 		#else
-			strcat(dest, "romfs/map/");
+			strcat(dest, "map/");
 		#endif
 		strcat(dest, toChar);
 		
@@ -1021,7 +1021,7 @@ void loadScreen()
 	#elif defined(_SDL)
 		strcpy(dest, "data/obj/");
 	#else
-		strcpy(dest, "romfs/obj/");
+		strcpy(dest, "obj/");
 	#endif
 	
 	
